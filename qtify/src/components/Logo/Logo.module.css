@@ -1,0 +1,9 @@
+.imgContainer {
+  width: 67px;
+  height: 34px;
+}
+.img {
+  object-fit: cover;
+  object-position: center;
+  max-width: 100%;
+}
