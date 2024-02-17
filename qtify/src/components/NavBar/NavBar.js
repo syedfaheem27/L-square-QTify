@@ -8,7 +8,7 @@ const NavBar = () => {
     <nav className={styles.navbar}>
       <Logo />
       <SearchBar />
-      <Button>give feedback</Button>
+      <Button>Give Feedback</Button>
     </nav>
   );
 };

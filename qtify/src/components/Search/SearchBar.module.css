@@ -17,6 +17,8 @@
   font-size: 16px;
   line-height: 19.2px;
   letter-spacing: 0.2px;
+  font-family: "Lato", sans-serif;
+  color: var(--color-black);
 }
 .input:focus {
   outline: none;
