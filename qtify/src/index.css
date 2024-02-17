@@ -1,6 +1,9 @@
 :root {
   /* Global variables to be defined here */
   /* --color-white: #ffffff; */
+  --color-primary: #34c94b;
+  --color-black: #121212;
+  --color-white: #ffffff;
 }
 
 *,
@@ -45,4 +48,8 @@ h6 {
 #root,
 #__next {
   isolation: isolate;
+}
+
+body {
+  background-color: var(--color-black);
 }

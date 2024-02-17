@@ -1,13 +1,13 @@
 import Button from "../Button/Button";
 import Logo from "../Logo/Logo";
-import Search from "../Search/Search";
+import SearchBar from "../Search/SearchBar";
 import styles from "./NavBar.module.css";
 
 const NavBar = () => {
   return (
     <nav className={styles.navbar}>
       <Logo />
-      <Search />
+      <SearchBar />
       <Button>give feedback</Button>
     </nav>
   );
