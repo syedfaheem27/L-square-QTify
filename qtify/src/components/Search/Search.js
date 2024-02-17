@@ -1,7 +1,7 @@
-import styles from "./SearchBar.module.css";
+import styles from "./Search.module.css";
 import SearchLogo from "../../assets/search-icon.svg";
 
-const SearchBar = () => {
+const Search = () => {
   return (
     <div className={styles.container}>
       <input
@@ -17,4 +17,4 @@ const SearchBar = () => {
   );
 };
 
-export default SearchBar;
+export default Search;
