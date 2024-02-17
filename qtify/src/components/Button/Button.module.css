@@ -11,6 +11,8 @@
   line-height: 27px;
   letter-spacing: 0.25px;
   align-items: center;
-  cursor: pointer;
   border: 1px solid var(--color-black);
+}
+.btn:hover {
+  cursor: pointer;
 }

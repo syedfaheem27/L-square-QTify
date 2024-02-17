@@ -33,8 +33,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   width: 12%;
+}
+.btn:hover {
+  cursor: pointer;
 }
 .btn img {
   width: 20px;
