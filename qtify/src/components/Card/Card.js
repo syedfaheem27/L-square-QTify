@@ -1,11 +1,11 @@
 import styles from "./Card.module.css";
 import Chip from "@mui/material/Chip";
 
-const Card = ({ img, follows }) => {
+const Card = ({ img, follows, title }) => {
   return (
     <div className={styles.card}>
       <div className={styles["img-container"]}>
-        <img className={styles.img} src={img} alt="artist" />
+        <img className={styles.img} src={img} alt={title} />
         <div className={styles["chip-container"]}>
           <Chip label={follows} className={styles.chip} />
         </div>

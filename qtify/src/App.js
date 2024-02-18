@@ -36,7 +36,14 @@ function App() {
 
       <Section>
         {topSongs.map((song) => {
-          return <Card key={song.id} img={song.image} follows={song.follows} />;
+          return (
+            <Card
+              key={song.id}
+              img={song.image}
+              follows={song.follows}
+              title={song.title}
+            />
+          );
         })}
       </Section>
     </header>
