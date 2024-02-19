@@ -1,5 +1,9 @@
-import { useEffect, useState } from "react";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import styles from "./Section.module.css";
+
+import { useEffect, useState } from "react";
+import Slider from "react-slick";
 import axios from "axios";
 import Card from "../Card/Card";
 
@@ -8,6 +12,14 @@ const Section = ({ url }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const [topSongs, setTopSongs] = useState([]);
+
+  const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+  };
 
   //TODO: use enqueSnackbar for showing notifications
   //and handle the isLoading states and the view corresponding to it
@@ -33,19 +45,28 @@ const Section = ({ url }) => {
           {isOpen ? "Collapse" : "Show all"}
         </button>
       </div>
-      <div className={styles["song-list"]}>
+      <div className={isOpen ? styles["song-list"] : ""}>
         {isOpen &&
-          topSongs.map((song) => {
-            return (
+          topSongs.map((song) => (
+            <Card
+              key={song.id}
+              img={song.image}
+              follows={song.follows}
+              title={song.title}
+            />
+          ))}
+        {!isOpen && (
+          <Slider {...settings}>
+            {topSongs.map((song) => (
               <Card
                 key={song.id}
                 img={song.image}
                 follows={song.follows}
                 title={song.title}
               />
-            );
-          })}
-        {!isOpen && <div>None</div>}
+            ))}
+          </Slider>
+        )}
       </div>
     </section>
   );
