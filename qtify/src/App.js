@@ -7,7 +7,7 @@ function App() {
     <header>
       <NavBar />
       <Hero />
-      <Section url={"https://qtify-backend-labs.crio.do/albums/top"} />
+        <Section url={"https://qtify-backend-labs.crio.do/albums/top"} />
     </header>
   );
 }
