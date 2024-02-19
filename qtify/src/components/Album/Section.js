@@ -30,13 +30,6 @@ const Section = ({ url }) => {
         },
       },
       {
-        breakpoint: 924,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-        },
-      },
-      {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
