@@ -45,7 +45,6 @@ const Section = ({ url }) => {
               />
             );
           })}
-        {!isOpen && <div>None</div>}
       </div>
     </section>
   );
