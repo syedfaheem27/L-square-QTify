@@ -10,7 +10,7 @@ const Card = ({ img, follows, title }) => {
           <Chip label={follows} className={styles.chip} />
         </div>
       </div>
-      <span className={styles.txt}>New English Songs</span>
+      <span className={styles.txt}>{title}</span>
     </div>
   );
 };
