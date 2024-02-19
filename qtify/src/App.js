@@ -1,13 +1,16 @@
 import Hero from "./components/Hero/Hero";
 import NavBar from "./components/NavBar/NavBar";
 import Section from "./components/Album/Section";
+import Divider from "./components/Divider/Divider";
 
 function App() {
   return (
     <header>
       <NavBar />
       <Hero />
-      <Section url={"https://qtify-backend-labs.crio.do/albums/top"} />
+      <Section album={"top"} label="Top Albums" />
+      <Section album={"new"} label="New Albums" />
+      <Divider />
     </header>
   );
 }
