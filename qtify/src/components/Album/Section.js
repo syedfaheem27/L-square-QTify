@@ -6,7 +6,7 @@ import Card from "../Card/Card";
 import { API } from "../../utils/constants";
 //TODO: make use of reusable button component
 const Section = ({ album, label }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const [topSongs, setTopSongs] = useState([]);
 
