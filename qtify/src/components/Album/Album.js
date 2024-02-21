@@ -8,7 +8,7 @@ import Card from "../Card/Card";
 import { API } from "../../utils/constants";
 //TODO: make use of reusable button component
 const Section = ({ album, label }) => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const [topSongs, setTopSongs] = useState([]);
 
@@ -34,7 +34,7 @@ const Section = ({ album, label }) => {
       <div className={styles.action}>
         <span>{label}</span>
         <button onClick={() => setIsOpen((o) => !o)}>
-          {isOpen ? "Collapse" : "Show all"}
+          {isOpen ? "Collapse" : "Show All"}
         </button>
       </div>
       <div className={isOpen ? styles["song-list"] : "slider-container"}>
