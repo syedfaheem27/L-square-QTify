@@ -1,1 +1,1 @@
-export const API = "https://qtify-backend-labs.crio.do/albums";
+export const API = "https://qtify-backend-labs.crio.do";

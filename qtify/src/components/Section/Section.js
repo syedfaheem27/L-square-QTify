@@ -1,4 +1,4 @@
-import styles from "./Album.module.css";
+import styles from "./Section.module.css";
 import Carousel from "../Carousel/Carousel";
 
 import { useCallback, useEffect, useState } from "react";
@@ -7,7 +7,7 @@ import Card from "../Card/Card";
 
 import { API } from "../../utils/constants";
 //TODO: make use of reusable button component
-const Section = ({ album, label }) => {
+const Section = ({ album, label, children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const [topSongs, setTopSongs] = useState([]);
@@ -37,6 +37,7 @@ const Section = ({ album, label }) => {
           {isOpen ? "Collapse" : "Show All"}
         </button>
       </div>
+      {children}
       <div className={isOpen ? styles["song-list"] : "slider-container"}>
         {isOpen &&
           topSongs.map((song) => (

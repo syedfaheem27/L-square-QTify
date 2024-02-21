@@ -1,9 +1,3 @@
-/* .songs {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(159px, 1fr));
-  gap: 16px;
-} */
-
 .songs {
   max-width: 1384px;
   width: 96%;

@@ -1,6 +1,6 @@
 import Hero from "./components/Hero/Hero";
 import NavBar from "./components/NavBar/NavBar";
-import Album from "./components/Album/Album";
+import Section from "./components/Section/Section";
 import Divider from "./components/Divider/Divider";
 
 function App() {
@@ -8,8 +8,8 @@ function App() {
     <header>
       <NavBar />
       <Hero />
-      <Album album={"top"} label="Top Albums" />
-      <Album album={"new"} label="New Albums" />
+      <Section album="albums/top" label="Top Albums" />
+      <Section album="albums/new" label="New Albums" />
       <Divider />
     </header>
   );
