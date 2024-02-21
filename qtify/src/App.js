@@ -1,16 +1,14 @@
 import Hero from "./components/Hero/Hero";
 import NavBar from "./components/NavBar/NavBar";
-import Section from "./components/Album/Section";
-import Divider from "./components/Divider/Divider";
+import Album from "./components/Album/Album";
 
 function App() {
   return (
     <header>
       <NavBar />
       <Hero />
-      <Section album={"top"} label="Top Albums" />
-      <Section album={"new"} label="New Albums" />
-      <Divider />
+      <Album album={"top"} label="Top Albums" />
+      <Album album={"new"} label="New Albums" />
     </header>
   );
 }

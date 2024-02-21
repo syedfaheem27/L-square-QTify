@@ -1,3 +1,5 @@
+import React from "react";
+
 import styles from "./Card.module.css";
 import Chip from "@mui/material/Chip";
 
@@ -15,4 +17,4 @@ const Card = ({ img, follows, title }) => {
   );
 };
 
-export default Card;
+export default React.memo(Card);

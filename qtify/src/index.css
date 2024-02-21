@@ -53,3 +53,7 @@ h6 {
 body {
   background-color: var(--color-black);
 }
+
+.slider-container {
+  padding: 4px 8px;
+}

@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
-import styles from "./Section.module.css";
+import styles from "./Album.module.css";
+import Carousel from "../Carousel/Carousel";
+
+import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 import Card from "../Card/Card";
 
@@ -12,14 +14,15 @@ const Section = ({ album, label }) => {
 
   //TODO: use enqueSnackbar for showing notifications
   //and handle the isLoading states and the view corresponding to it
-  const fetchSongs = async (url) => {
+  const fetchSongs = useCallback(async (url) => {
     try {
       const data = await axios.get(url);
       setTopSongs(data.data);
     } catch (err) {
       console.log(err);
     }
-  };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     fetchSongs(`${API}/${album}`);
@@ -34,18 +37,28 @@ const Section = ({ album, label }) => {
           {isOpen ? "Collapse" : "Show all"}
         </button>
       </div>
-      <div className={styles["song-list"]}>
+      <div className={isOpen ? styles["song-list"] : "slider-container"}>
         {isOpen &&
-          topSongs.map((song) => {
-            return (
+          topSongs.map((song) => (
+            <Card
+              key={song.id}
+              img={song.image}
+              follows={song.follows}
+              title={song.title}
+            />
+          ))}
+        {!isOpen && (
+          <Carousel>
+            {topSongs.map((song) => (
               <Card
                 key={song.id}
                 img={song.image}
                 follows={song.follows}
                 title={song.title}
               />
-            );
-          })}
+            ))}
+          </Carousel>
+        )}
       </div>
     </section>
   );
