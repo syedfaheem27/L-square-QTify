@@ -1,0 +1,19 @@
+.arrow-container-left {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%) translateX(-58%);
+  cursor: pointer;
+}
+.arrow-container-right {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  z-index: 2;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%) translateX(58%);
+  cursor: pointer;
+}
