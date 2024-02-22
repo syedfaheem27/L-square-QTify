@@ -3,6 +3,8 @@ import NavBar from "./components/NavBar/NavBar";
 import Section from "./components/Section/Section";
 import Divider from "./components/Divider/Divider";
 
+//TODO: work on it's responsiveness and add error handling
+
 function App() {
   return (
     <header>
