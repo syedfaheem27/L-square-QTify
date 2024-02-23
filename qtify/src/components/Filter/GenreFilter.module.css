@@ -1,0 +1,24 @@
+.container {
+  max-width: 331px;
+  width: 100%;
+  border: 1px solid red;
+  height: 34px;
+  margin-bottom: 24px;
+  margin-top: -14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.chip {
+  max-width: 68px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  border: none;
+  background-color: inherit;
+  color: var(--color-white);
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 24px;
+}
