@@ -9,13 +9,24 @@ const GenreFilter = () => {
 
   return (
     <div className={styles.container}>
-      {genres.length !== 0 && <button className={styles.chip}>All</button>}
+      {genres.length !== 0 && (
+        <button
+          className={`${styles.chip} ${
+            activeGenre === "all" ? "active-song" : ""
+          }`}
+          onClick={() => setActiveGenre("all")}
+        >
+          All
+        </button>
+      )}
 
       {genres.length !== 0 &&
         genres.map(({ label, key }) => {
           return (
             <button
-              className={styles.chip}
+              className={`${styles.chip} ${
+                activeGenre === key ? "active-song" : ""
+              }`}
               key={key}
               onClick={() => setActiveGenre(key)}
             >
