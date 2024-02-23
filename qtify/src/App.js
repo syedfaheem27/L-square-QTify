@@ -1,20 +1,29 @@
-import Hero from "./components/Hero/Hero";
-import NavBar from "./components/NavBar/NavBar";
-import Section from "./components/Section/Section";
-import Divider from "./components/Divider/Divider";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Home from "./pages/Home";
+import Songs from "./pages/Songs";
+import DataProvider from "./context/DataProvider";
 
 //TODO: work on it's responsiveness and add error handling
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+    children: [
+      {
+        index: true,
+        element: (
+          <DataProvider>
+            <Songs />
+          </DataProvider>
+        ),
+      },
+    ],
+  },
+]);
+
 function App() {
-  return (
-    <header>
-      <NavBar />
-      <Hero />
-      <Section album="albums/top" label="Top Albums" />
-      <Section album="albums/new" label="New Albums" />
-      <Divider />
-    </header>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
