@@ -7,8 +7,8 @@ const Songs = () => {
   return (
     <>
       <Hero />;
-      <Section album="albums/top" label="Top Albums" />
-      <Section album="albums/new" label="New Albums" />
+      <Section album="topAlbums" label="Top Albums" />
+      <Section album="newAlbums" label="New Albums" />
       <Divider />;
     </>
   );
