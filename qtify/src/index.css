@@ -57,6 +57,6 @@ body {
 .slider-container {
   padding: 4px 8px;
 }
-.active-song{
-  border-bottom: 2px solid var(--color-primary) !important;
+.active-song {
+  border-bottom: 4px solid var(--color-primary) !important;
 }
