@@ -55,3 +55,6 @@
   font-size: 14px;
   line-height: 21px;
 }
+.tip {
+  cursor: pointer !important;
+}
