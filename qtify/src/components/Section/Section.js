@@ -59,7 +59,7 @@ const Section = ({ album, label, children, enableToggle }) => {
             />
           ))}
         {!isOpen && albumData.length !== 0 && (
-          <Carousel>
+          <Carousel len={albumData.length}>
             {albumData.map((song) => (
               <Card
                 key={song.id}

@@ -6,11 +6,31 @@ import styles from "./Carousel.module.css";
 
 import leftArrow from "../../assets/LeftArrow.svg";
 import rightArrow from "../../assets/RightArrow.svg";
+import { useState } from "react";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
-const Carousel = ({ children }) => {
-  const LeftArrow = ({ onClick }) => {
+const Carousel = ({ children, len }) => {
+  const [currSlide, setCurrSlide] = useState(0);
+  const matches_xs = useMediaQuery("(max-width: 480px)");
+  const matches_sm = useMediaQuery("(min-width: 481px) and (max-width:600px)");
+  const matches_lg = useMediaQuery("(min-width: 601px) and (max-width:1024px)");
+  const matches_xl = useMediaQuery("(min-width: 1025px)");
+
+  let len_modifier;
+
+  if (matches_xs) len_modifier = -1;
+  if (matches_sm) len_modifier = -2;
+  if (matches_lg) len_modifier = -3;
+  if (matches_xl) len_modifier = -6;
+
+  const LeftArrow = ({ onClick, className, style }) => {
     return (
-      <div className={styles["arrow-container-left"]} onClick={onClick}>
+      <div
+        className={`${styles["arrow-container-left"]} ${
+          currSlide === 0 ? "hide" : ""
+        }`}
+        onClick={onClick}
+      >
         <img src={leftArrow} alt="" />
       </div>
     );
@@ -18,7 +38,12 @@ const Carousel = ({ children }) => {
 
   const RightArrow = ({ onClick }) => {
     return (
-      <div className={styles["arrow-container-right"]} onClick={onClick}>
+      <div
+        className={`${styles["arrow-container-right"]} ${
+          currSlide === len + len_modifier ? "hide" : ""
+        }`}
+        onClick={onClick}
+      >
         <img src={rightArrow} alt="" />
       </div>
     );
@@ -26,7 +51,7 @@ const Carousel = ({ children }) => {
 
   const settings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     swipeToSlide: true,
     speed: 1000,
     slidesToShow: 6,
@@ -34,9 +59,6 @@ const Carousel = ({ children }) => {
     initialSlide: 0,
     nextArrow: <RightArrow />,
     prevArrow: <LeftArrow />,
-    afterChange: function (index) {
-      console.log(`Slider Changed to: ${index + 1}`);
-    },
     responsive: [
       {
         breakpoint: 1024,
@@ -60,6 +82,10 @@ const Carousel = ({ children }) => {
         },
       },
     ],
+
+    afterChange: (curr) => {
+      setCurrSlide(curr);
+    },
   };
 
   return <Slider {...settings}>{children}</Slider>;

@@ -60,3 +60,6 @@ body {
 .active-song {
   border-bottom: 4px solid var(--color-primary) !important;
 }
+.hide {
+  display: none;
+}
