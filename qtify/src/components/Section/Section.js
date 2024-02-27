@@ -14,6 +14,7 @@ const Section = ({ album, label, children, enableToggle }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const { [album]: albumData, setSongs } = useContext(DataContext);
+
   const { activeGenre } = useContext(GenreContext);
 
   useEffect(() => {
@@ -48,28 +49,40 @@ const Section = ({ album, label, children, enableToggle }) => {
       <div className={isOpen ? styles["song-list"] : "slider-container"}>
         {isOpen &&
           albumData.length !== 0 &&
-          albumData.map((song) => (
+          albumData.map((data) => (
             <Card
-              key={song.id}
-              img={song.image}
+              key={data.id}
+              img={data.image}
               follows={
-                song.follows ? `${song.follows} Follows` : `${song.likes} Likes`
+                data.follows ? `${data.follows} Follows` : `${data.likes} Likes`
               }
-              title={song.title}
+              title={data.title}
+              tooltip={
+                data.songs
+                  ? `${data.songs.length} songs`
+                  : `${data.likes} Likes`
+              }
+              slug={data?.slug}
             />
           ))}
         {!isOpen && albumData.length !== 0 && (
           <Carousel len={albumData.length}>
-            {albumData.map((song) => (
+            {albumData.map((data) => (
               <Card
-                key={song.id}
-                img={song.image}
+                key={data.id}
+                img={data.image}
                 follows={
-                  song.follows
-                    ? `${song.follows} Follows`
-                    : `${song.likes} Likes`
+                  data.follows
+                    ? `${data.follows} Follows`
+                    : `${data.likes} Likes`
                 }
-                title={song.title}
+                title={data.title}
+                tooltip={
+                  data.songs
+                    ? `${data.songs.length} songs`
+                    : `${data.likes} Likes`
+                }
+                slug={data?.slug}
               />
             ))}
           </Carousel>

@@ -2,6 +2,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Songs from "./pages/Songs";
 import DataProvider from "./context/DataProvider";
+import Album from "./pages/Album";
 
 //TODO: work on it's responsiveness and add error handling
 
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
             <Songs />
           </DataProvider>
         ),
+      },
+      {
+        path: "albums/:songId",
+        element: <Album />,
       },
     ],
   },
