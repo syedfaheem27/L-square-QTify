@@ -3,7 +3,7 @@ import Accordion from "../Accordion/Accordion";
 import styles from "./Footer.module.css";
 
 const Footer = () => {
-  const [opens, setOpens] = useState(null);
+  const [opens, setOpens] = useState(0);
 
   return (
     <footer className={styles.container}>

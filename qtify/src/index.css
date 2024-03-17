@@ -66,5 +66,5 @@ body {
 
 .arrow-open {
   transform: rotate(90deg) !important;
-  transition: all 0.3s ease-in-out !important;
+  transition: all 0.32s ease-in-out !important;
 }
