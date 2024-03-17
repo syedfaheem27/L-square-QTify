@@ -1,3 +1,5 @@
+//This is just for a demonstration purpose of how to use useReducer
+
 import { useReducer } from "react";
 import { DataContext } from "./DataContext";
 import { getNewAlbums, getTopAlbums } from "../utils/Api";
