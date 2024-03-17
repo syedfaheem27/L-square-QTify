@@ -11,9 +11,11 @@
   background-color: inherit;
   border: none;
   color: var(--color-primary);
-  transform: rotate(90deg);
   font-weight: 900;
   font-size: 28px;
+  cursor: pointer;
+  transform: rotate(0deg);
+  transition: all 0.3s ease-in-out;
 }
 
 .body {

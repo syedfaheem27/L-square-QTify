@@ -24,8 +24,11 @@ const Header = ({ open, text }) => {
   return (
     <div className={styles.header}>
       <span>{text}</span>
-      <button onClick={toggleOpenHandle} style={{ cursor: "pointer" }}>
-        {opens === open ? ">" : "<"}
+      <button
+        onClick={toggleOpenHandle}
+        className={`${opens === open ? "arrow-open" : ""}`}
+      >
+        {">"}
       </button>
     </div>
   );
