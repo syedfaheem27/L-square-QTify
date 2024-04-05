@@ -15,3 +15,20 @@
   font-weight: 600;
   font-style: normal;
 }
+
+@media (max-width: 567px) {
+  .btn {
+    font-size: 14px;
+    line-height: 16px;
+    width: 140px;
+    padding: 0;
+  }
+}
+
+@media (max-width: 367px) {
+  .btn {
+    font-size: 9px;
+    line-height: 14px;
+    width: 120px;
+  }
+}

@@ -7,3 +7,9 @@
   object-position: center;
   max-width: 100%;
 }
+
+@media (max-width: 500px) {
+  .imgContainer {
+    display: none;
+  }
+}
