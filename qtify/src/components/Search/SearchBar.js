@@ -1,7 +1,7 @@
 import styles from "./SearchBar.module.css";
 import SearchLogo from "../../assets/search-icon.svg";
 
-const SearchBar = () => {
+const SearchBar = ({ searchText, setSearchText }) => {
   return (
     <div className={styles.container}>
       <input
@@ -9,6 +9,8 @@ const SearchBar = () => {
         type="text"
         name="search"
         placeholder="Search an album of your choice"
+        onChange={(e) => setSearchText(e.target.value.toLowerCase())}
+        value={searchText}
       />
       <button className={styles.btn}>
         <img src={SearchLogo} alt="search logo" />

@@ -1,0 +1,17 @@
+.container {
+  max-width: 600px;
+  width: 80%;
+  max-height: 600px;
+  border: 1px solid var(--color-primary);
+  border-top: none;
+  position: absolute;
+  top: 74px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  color: #ffff;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding: 1rem 3rem;
+  background-color: #1a1a1a;
+}

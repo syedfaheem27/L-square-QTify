@@ -9,15 +9,15 @@ import AlbumSongs from "./pages/AlbumSongs";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: (
+      <DataProvider>
+        <Home />
+      </DataProvider>
+    ),
     children: [
       {
         index: true,
-        element: (
-          <DataProvider>
-            <Songs />
-          </DataProvider>
-        ),
+        element: <Songs />,
       },
       {
         path: "albums/:songId",
