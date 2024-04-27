@@ -1,7 +1,10 @@
 import styles from "./SearchBar.module.css";
 import SearchLogo from "../../assets/search-icon.svg";
+import { useContext } from "react";
+import { SearchContext } from "../../context/SearchContext";
 
-const SearchBar = ({ searchText, setSearchText }) => {
+const SearchBar = () => {
+  const { searchText, setSearchText } = useContext(SearchContext);
   return (
     <div className={styles.container}>
       <input

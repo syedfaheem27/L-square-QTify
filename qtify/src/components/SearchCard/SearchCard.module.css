@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  max-height: 71px;
+}
+
+.img-container {
+  overflow: hidden;
+  width: 66px;
+  border-radius: 5px;
+}
+
+.img-container img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+}
+
+.content {
+  width: 90%;
+  color: var(--color-white);
+}
+.content h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+.content p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+}

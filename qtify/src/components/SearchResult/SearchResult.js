@@ -1,15 +1,26 @@
+import { useContext } from "react";
+import SearchCard from "../SearchCard/SearchCard";
 import styles from "./SearchResult.module.css";
+import { SearchContext } from "../../context/SearchContext";
+import { DataContext } from "../../context/DataContext";
 
-const SearchResult = ({ data }) => {
-  console.log(data);
+const SearchResult = () => {
+  const { searchText } = useContext(SearchContext);
+  const { topAlbums, newAlbums } = useContext(DataContext);
+
+  const data = [...topAlbums, ...newAlbums].filter((album) =>
+    album.title.toLowerCase().startsWith(searchText)
+  );
+
+  if (!searchText) return null;
   return (
-    <div className={styles.container}>
-      <ul>
-        {data.map((d) => {
-          return <li key={d.id}>{d.title}</li>;
-        })}
+    <section className={styles.container}>
+      <ul className={styles.list}>
+        {data.map((album) => (
+          <SearchCard key={album.id} album={album} />
+        ))}
       </ul>
-    </div>
+    </section>
   );
 };
 
