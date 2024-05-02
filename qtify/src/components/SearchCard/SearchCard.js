@@ -5,9 +5,14 @@ import { SearchContext } from "../../context/SearchContext";
 
 const SearchCard = ({ album }) => {
   console.log(album);
+
   const { setSearchText } = useContext(SearchContext);
   return (
-    <Link to={`/albums/${album.slug}`} onClick={() => setSearchText("")}>
+    <Link
+      to={`/albums/${album.slug}`}
+      state={album}
+      onClick={() => setSearchText("")}
+    >
       <li className={styles.container}>
         <div className={styles["img-container"]}>
           <img src={album.image} alt={album.title} />

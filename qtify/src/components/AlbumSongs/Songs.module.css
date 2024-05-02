@@ -1,0 +1,23 @@
+.container {
+  position: relative;
+  max-width: 1009px;
+  height: 360px;
+  width: 95%;
+  margin: 74px auto;
+  padding: 8px 16px;
+}
+.back {
+  border: 1px solid var(--color-white);
+  position: absolute;
+  top: -48px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 50%;
+  color: var(--color-white);
+  background-color: inherit;
+  font-size: 16px;
+  cursor: pointer;
+}
