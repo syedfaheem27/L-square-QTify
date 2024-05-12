@@ -3,6 +3,7 @@ import Songs from "../components/AlbumSongs/Songs";
 
 const AlbumSongs = () => {
   const { state: album } = useLocation();
+  console.log(album);
 
   return <Songs album={album} />;
 };

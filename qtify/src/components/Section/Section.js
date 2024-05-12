@@ -68,22 +68,7 @@ const Section = ({ album, label, children, enableToggle }) => {
         {!isOpen && albumData.length !== 0 && (
           <Carousel len={albumData.length}>
             {albumData.map((data) => (
-              <Card
-                key={data.id}
-                img={data.image}
-                follows={
-                  data.follows
-                    ? `${data.follows} Follows`
-                    : `${data.likes} Likes`
-                }
-                title={data.title}
-                tooltip={
-                  data.songs
-                    ? `${data.songs.length} songs`
-                    : `${data.likes} Likes`
-                }
-                slug={data?.slug}
-              />
+              <Card data={data} key={data.id} />
             ))}
           </Carousel>
         )}
