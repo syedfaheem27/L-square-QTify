@@ -1,0 +1,34 @@
+.container {
+  width: 100%;
+  color: var(--color-white);
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 16px;
+  row-gap: 22px;
+  padding: 8px 16px;
+}
+.container li {
+  padding: 8px 0;
+  border-bottom: 1px solid gray;
+}
+.container li > div {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.container img {
+  width: 59px;
+  height: 64px;
+  border-radius: 4px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.header > div:not(:last-child) {
+  width: 40%;
+}
+
+.header > div:last-child {
+  width: 10%;
+}

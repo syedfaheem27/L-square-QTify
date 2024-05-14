@@ -1,0 +1,12 @@
+.song {
+  display: flex;
+  justify-content: space-between;
+}
+
+.song > div:not(:last-child) {
+  width: 40%;
+}
+
+.song > div:last-child {
+  width: 10%;
+}
