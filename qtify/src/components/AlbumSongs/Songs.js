@@ -33,7 +33,7 @@ const Songs = ({ album }) => {
 
       <Stack
         spacing={2}
-        sx={{ marginTop: "24px", gap: "16px" }}
+        sx={{ marginTop: "64px", gap: "16px" }}
         display="flex"
         flexDirection="column"
       >

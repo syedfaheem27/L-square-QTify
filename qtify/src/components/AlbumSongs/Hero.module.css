@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  height: 100%;
+  height: 464px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -91,4 +91,22 @@
 
 .actions button:hover {
   transform: scale(1.07);
+}
+
+@media (max-width: 746px) {
+  .container {
+    flex-direction: column-reverse;
+  }
+  .img-container {
+    width: 100%;
+  }
+  .content p,
+  .song-info,
+  .actions {
+    display: none;
+  }
+  .content {
+    width: 100%;
+    height: 20%;
+  }
 }
